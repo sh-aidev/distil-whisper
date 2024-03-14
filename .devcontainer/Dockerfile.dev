@@ -1,0 +1,50 @@
+FROM nvidia/cuda:11.8.0-cudnn8-devel-ubuntu22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV MALENIA_IN_DOCKER=1
+
+ARG USERNAME=developer
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+# setting timezone
+RUN ln -fs /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+
+RUN apt update && apt install --no-install-recommends -y \
+    docker.io \
+    iputils-ping \
+    vorbis-tools \
+    libncurses5 \
+    sudo \
+    ssh \
+    sox \
+    wget \
+    curl \
+    python3-sklearn \
+    portaudio19-dev \
+    alsa-utils \
+    software-properties-common \
+    vim && apt clean
+
+RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3
+
+RUN python3 -m pip install --upgrade pip && \
+    python3 -m pip install setuptools wheel black
+
+# installing bazel
+RUN if [ "$(arch)" = "x86_64" ]; then \
+    wget https://github.com/bazelbuild/bazelisk/releases/download/v1.16.0/bazelisk-linux-amd64 -O /usr/local/bin/bazel; \
+    else \
+    wget https://github.com/bazelbuild/bazelisk/releases/download/v1.16.0/bazelisk-linux-arm64 -O /usr/local/bin/bazel; \
+    fi && \
+    chmod +x /usr/local/bin/bazel;
+
+# adding dev user
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -G audio,users -ms /bin/bash $USERNAME \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
+
+USER $USERNAME
+
+CMD ["/bin/bash"]

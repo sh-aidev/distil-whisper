@@ -12,7 +12,7 @@ ANSI_YELLOW="\033[33m"      # Yellow text
 sys.stdout.write(ANSI_BOLD + ANSI_YELLOW)
 print("Inferencing with HuggingFace's Distil-Whisper Model:")
 import pyfiglet
-distil_whisper_art = pyfiglet.figlet_format("distil-whisper")
+distil_whisper_art = pyfiglet.figlet_format("distil-whisper",  font="slant", justify="center", width=100)
 print(distil_whisper_art)
 
 sys.stdout.write(ANSI_RESET)

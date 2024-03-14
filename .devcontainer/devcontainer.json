@@ -1,0 +1,35 @@
+{
+    "name": "distil-whisper",
+    "build": {
+        "dockerfile": "Dockerfile.dev",
+        "context": ".."
+    },
+    "runArgs": [
+      "--gpus=all",
+      "--net=host",
+      "--privileged",
+      "-v=/tmp:/tmp",
+      "-e=DISPLAY=${env:DISPLAY}",
+      "-v=/tmp/.X11-unix:/tmp/.X11-unix",
+      "-v=${localEnv:HOME}/.ssh:/home/developer/.ssh"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "BazelBuild.vscode-bazel",
+                "eamodio.gitlens",
+                "zxh404.vscode-proto3",
+                "rust-lang.rust-analyzer",
+                "bungcip.better-toml",
+                "ms-python.python",
+                "golang.go",
+                "tal7aouy.icons",
+                "ms-python.isort",
+                "ms-python.vscode-pylance",
+                "devondcarew.bazel-code",
+                "StackBuild.bazel-stack-vscode",
+                "ms-python.black-formatter"
+            ]
+        }
+    }
+  }
