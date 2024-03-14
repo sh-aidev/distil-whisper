@@ -7,3 +7,9 @@ whisper_channel_name = "p-whisper-sock"
 
 [stt_model]
 model_name = "distil-whisper/distil-large-v2"
+
+[microphone]
+mic_name = "USB Audio Device:"
+sample_rate = 44100
+channels = 1
+width = 2

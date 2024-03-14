@@ -10,7 +10,14 @@ class ServerModel(BaseModel):
 class STTModel(BaseModel):
     model_name: str
 
+class MicrophoneModel(BaseModel):
+    mic_name: str
+    inrate: int
+    channels: int
+    width: int
+
 class Model(BaseModel):
     logger: LoggerModel
     server: ServerModel
     stt_model: STTModel
+    microphone: MicrophoneModel
