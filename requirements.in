@@ -1,0 +1,15 @@
+https://download.pytorch.org/whl/cu118/torch-2.1.2%2Bcu118-cp310-cp310-linux_x86_64.whl
+https://download.pytorch.org/whl/cu118/torchaudio-2.1.2%2Bcu118-cp310-cp310-linux_x86_64.whl
+https://download.pytorch.org/whl/cu118/torchvision-0.16.2%2Bcu118-cp310-cp310-linux_x86_64.whl
+transformers==4.35.2
+datasets==2.15.0
+librosa==0.10.1
+redis==5.0.1
+accelerate==0.25.0
+loguru==0.7.0
+python-dotenv==1.0.0
+toml==0.10.2
+PyAudio==0.2.14
+pydantic==2.5.2
+typing-extensions==4.7.1
+pyfiglet==1.0.2

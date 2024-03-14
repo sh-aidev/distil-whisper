@@ -1,0 +1,9 @@
+[logger]
+environment="prod"
+
+[server]
+redis_port = "6379"
+whisper_channel_name = "p-whisper-sock"
+
+[stt_model]
+model_name = "distil-whisper/distil-large-v2"
