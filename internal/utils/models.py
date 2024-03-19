@@ -12,7 +12,7 @@ class STTModel(BaseModel):
 
 class MicrophoneModel(BaseModel):
     mic_name: str
-    inrate: int
+    sample_rate: int
     channels: int
     width: int
 

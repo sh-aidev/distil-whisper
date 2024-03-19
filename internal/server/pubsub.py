@@ -18,7 +18,7 @@ class RedisPubSub():
         
         self.stt = STT(model_name = self.config.whisper.stt_model.model_name)
         logger.debug("STT Initialized...")
-        self.audio_src = AudioSrc(mic_name=self.config.whisper.microphone.mic_name, inrate=self.config.whisper.microphone.inrate, channels=self.config.whisper.microphone.channels, width=self.config.whisper.microphone.width)
+        self.audio_src = AudioSrc(mic_name=self.config.whisper.microphone.mic_name, inrate=self.config.whisper.microphone.sample_rate, channels=self.config.whisper.microphone.channels, width=self.config.whisper.microphone.width)
 
         logger.debug(
             f"Connecting to Redis at: http://{os.getenv('REDIS_HOST', 'localhost')}:{os.getenv('REDIS_PORT', self.config.whisper.server.redis_port)}"

@@ -84,7 +84,7 @@ python3 -m pip install -r requirements.txt
 python3 main.py
 ```
 
-## ⚡️ GPU Stat
+## ⚡️ GPU Memory Stats
 
 ![GPU Memory Stats](images/gpu-stat.png)
 
