@@ -82,6 +82,10 @@ python3 -m pip install -r requirements.txt
 
 ```bash
 python3 main.py
+
+# NOTE: If you are running the code for the first time, make sure to correctly provide mic details in config.toml file like name, sample rate, etc.
+
+# Also, it is possible that noise threshold for you mic could be different. So, you can play around with the value to get the best result.
 ```
 
 ## ⚡️ GPU Memory Stats
