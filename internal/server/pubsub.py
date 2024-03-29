@@ -43,6 +43,7 @@ class RedisPubSub():
             sys.stdout.write(ANSI_BOLD + ANSI_ITALIC + ANSI_MAGENTA)
             self.print_with_typing_effect(text, 0.05)
             sys.stdout.write(ANSI_RESET)
+            print("\n")
             # logger.info(f"Predicted Output: {self.print_with_typing_effect(text, 0.05)}")
             self.client.publish(self.channel_name, str(text))
     
