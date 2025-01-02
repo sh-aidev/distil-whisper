@@ -85,7 +85,11 @@ python3 get_source_mic.py
 ```
 Which ever Mic you want to select, copy the name of that mic and paste it in config.toml file.
 
-`NOTE`: If you are using docker, you need to run the above command inside the docker container. Also, if your desired mic is not listed, try restarting system and then run the command.
+`NOTE`: If you are using docker, you need to run the above command inside the docker container. If your desired mic is not listed, try restarting system and then run the command. Also, to get the mic sample rate, you can run the below command in the terminal and updated the sample rate in config.toml file respectively.
+
+```bash
+pactl list sources | grep -A 10 alsa_input
+```
 
 ### Step 5: Run the code
 
