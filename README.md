@@ -78,7 +78,16 @@ code .
 python3 -m pip install -r requirements.txt
 ```
 
-### Step 4: Run the code
+### Step 4: Get the Name of the Microphone
+
+```bash
+python3 get_source_mic.py
+```
+Which ever Mic you want to select, copy the name of that mic and paste it in config.toml file.
+
+`NOTE`: If you are using docker, you need to run the above command inside the docker container. Also, if your desired mic is not listed, try restarting system and then run the command.
+
+### Step 5: Run the code
 
 ```bash
 python3 main.py
